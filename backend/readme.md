@@ -1,16 +1,19 @@
 Dependencias de desenvolvimento:
 
-typescript
-ts-node-dev
-@types/cors
+typescript -D
+ts-node-dev -D
+@types/cors -D
 @types/express -D
 @types/bcryptjs -D
+@types/jsonwebtoken -D
 
 dependecias:
 
 cors
 prisma
+dotenv
 express
 bcryptjs
+jsonwebtoken
 @prisma/client
 express-async-errors

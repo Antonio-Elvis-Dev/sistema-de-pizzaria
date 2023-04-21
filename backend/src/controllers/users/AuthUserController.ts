@@ -9,7 +9,6 @@ class AuthUserController {
 
     const auth = await authUserService.execute({ email, password });
 
-    console.log(auth);
     return res.json(auth);
   }
 }
