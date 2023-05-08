@@ -12,15 +12,12 @@ import { CreateProductController } from "./controllers/product/CreateProductCont
 import uploadConfig from "./config/multer";
 import { ListByCategoryController } from "./controllers/product/ListByCategoryController";
 import { CreateOrderController } from "./controllers/order/CreateOrderController";
-<<<<<<< HEAD
 import { DeleteOrderService } from "./services/order/DeleteOrderService";
 import { DeleteOrderController } from "./controllers/order/DeleteOrderController";
 import { AddItemController } from "./controllers/order/AddItemController";
 import { RemoveItemController } from "./controllers/order/RemoveItemController";
-=======
 import { RemoveOrderController } from "./controllers/order/RemoveOrderController";
-import { AddItemController } from "./controllers/order/AddItemController";
->>>>>>> 99f78cae26156a7ebdced74d962184e616f3ab18
+
 
 const router = Router();
 
@@ -46,16 +43,12 @@ router.post(
   upload.single("file"),
   new CreateProductController().handle
 );
-<<<<<<< HEAD
 
-=======
->>>>>>> 99f78cae26156a7ebdced74d962184e616f3ab18
 router.get(
   "/category/product",
   isAuthenticated,
   new ListByCategoryController().handle
 );
-<<<<<<< HEAD
 
 // ROTAS ORDER
 
@@ -64,8 +57,6 @@ router.delete("/order", isAuthenticated, new DeleteOrderController().handle);
 
 router.post("/order/add", isAuthenticated, new AddItemController().handle);
 router.post("/order/remove", isAuthenticated, new RemoveItemController().handle);
-=======
->>>>>>> 99f78cae26156a7ebdced74d962184e616f3ab18
 
 // ROTA DE ORDER
 

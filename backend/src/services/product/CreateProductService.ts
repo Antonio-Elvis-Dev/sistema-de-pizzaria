@@ -21,18 +21,10 @@ class CreateProductService {
         name,
         price,
         banner,
-<<<<<<< HEAD
         category_id,
         description,
       },
     });
-=======
-        description,
-        category_id,
-      },
-    });
-
->>>>>>> 99f78cae26156a7ebdced74d962184e616f3ab18
     return product;
   }
 }
