@@ -1,3 +1,5 @@
+import { useContext, FormEvent } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 
@@ -7,8 +9,21 @@ import { Input, TextArea } from "../../components/ui/Input";
 import { Button } from "../../components/ui/Button";
 
 import Link from "next/link";
+// import { AuthContext } from "@/src/contexts/AuthContext";
 
 export default function SignUp() {
+  // const { signIn } = useContext(AuthContext);
+
+  // async function handleSignUp(event: FormEvent) {
+  //   event.preventDefault();
+
+  //   let data = {
+  //     password: "123123",
+  //     email: "elvis@elvis.com",
+  //   };
+  //   await signIn(data);
+  // }
+
   return (
     <>
       <Head>
