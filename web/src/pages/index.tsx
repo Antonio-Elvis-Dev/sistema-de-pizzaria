@@ -17,8 +17,6 @@ export default function Home() {
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
 
-
-    
     let data = {
       email: "elvis@gmail.com ",
       password: "123123",
@@ -37,7 +35,7 @@ export default function Home() {
         <Image className={styles.logo} src={logoImg} alt="Logo noxos" />
 
         <div className={styles.login}>
-          <form onSubmit={()=>handleLogin}>
+          <form onSubmit={handleLogin}>
             <Input placeholder="Digite Seu Email" type="email" />
 
             <Input placeholder="Digite Sua Senha" type="password" />

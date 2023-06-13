@@ -28,16 +28,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const isAuthenticated = !!user;
 
   async function signIn() {
-    alert("clicou");
+    console.log("clicou");
   }
 
   return (
-    <AuthContext.Provider
-      value={{ user, isAuthenticated, signIn }}
-    >
-
-{children}
-
+    <AuthContext.Provider value={{ user, isAuthenticated, signIn }}>
+      {children}
     </AuthContext.Provider>
   );
 }
