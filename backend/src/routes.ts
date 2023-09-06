@@ -24,6 +24,7 @@ const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp")); //pode ser passado como um middleware
 // ROTAS DE USUARIO
+
 router.post("/users", new CreateUserController().handle);
 router.post("/session", new AuthUserController().handle);
 router.get("/me", isAuthenticated, new DetaillUserController().handle); //passando middleware na rota
