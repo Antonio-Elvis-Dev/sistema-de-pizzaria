@@ -19,6 +19,7 @@ import { SendOrderController } from "./controllers/order/SendOrderController";
 import { ListOrderController } from "./controllers/order/ListOrderController";
 import { DetaillOrderController } from "./controllers/order/DetaillOrderController";
 import { FinishOrderController } from "./controllers/order/FinishOrderController";
+import { ListAllProductsController } from "./controllers/product/ListAllProductsController";
 
 const router = Router();
 
@@ -42,9 +43,18 @@ router.get("/category", isAuthenticated, new ListCategoryController().handle);
 router.post(
   "/product",
   isAuthenticated,
-  upload.single("file"),
+
   new CreateProductController().handle
 );
+
+router.get('/products', isAuthenticated, new ListAllProductsController().handle)
+
+// router.post(
+//   "/teste",
+//   isAuthenticated,
+
+//   new CreateProductController().handle
+// );
 
 router.get(
   "/category/product",

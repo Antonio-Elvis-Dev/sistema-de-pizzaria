@@ -3,26 +3,36 @@ import prismaClient from "../../prisma";
 interface ProductRequest {
   name: string;
   price: string;
-  description: string;
-  banner: string;
+
   category_id: string;
+  codigoProd: string;
 }
 
 class CreateProductService {
   async execute({
     name,
     price,
-    banner,
     category_id,
-    description,
+    codigoProd
   }: ProductRequest) {
+
+    const existsProduct = await prismaClient.product.findFirst(
+      {
+        where: {
+          codigoProd
+        }
+      }
+    )
+    if (existsProduct) {
+      throw new Error("cóigo presente na base")
+    }
+
     const product = await prismaClient.product.create({
       data: {
         name,
         price,
-        banner,
         category_id,
-        description,
+        codigoProd
       },
     });
     return product;
