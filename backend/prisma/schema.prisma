@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 // criar tablema no prisma ==> yarn prisma migrate dev
@@ -35,13 +35,13 @@ model Category {
 }
 
 model Product {
-  id          String    @id @default(uuid())
-  name        String
-  codigoProd  String  
-  price       String
-  
-  created_at  DateTime? @default(now())
-  updated_at  DateTime? @default(now())
+  id         String @id @default(uuid())
+  name       String
+  codigoProd String
+  price      String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
 
   category    Category @relation(fields: [category_id], references: [id]) // referencia a category - relação 1-N
   category_id String
@@ -50,7 +50,7 @@ model Product {
   @@map("products")
 }
 
-model Order { // pedido
+model Order {
   id     String  @id @default(uuid())
   table  Int
   status Boolean @default(false)
