@@ -75,7 +75,9 @@ router.delete(
 );
 
 router.put("/order/send", isAuthenticated, new SendOrderController().handle);
-router.get("/orders", isAuthenticated, new ListOrderController().handle);
+router.get("/orders",
+//isAuthenticated,
+new ListOrderController().handle);
 router.get(
   "/order/detail",
   isAuthenticated,
